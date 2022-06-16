@@ -1,0 +1,22 @@
+{% extends 'home.html.twig' %}
+{% block title %}
+    Liste des critères
+{% endblock %}
+{% block body %}
+    <table class="table table-bordered table-responsive-md">
+      <tr>
+        <th>Identifiant</th>
+        <th>Libelle</th>
+        <th>Action</th>
+        <th>Action</th>
+        </tr>
+    {% for c in criteres  %}
+        <tr>
+        <td>{{ c.id }}</td>
+        <td>{{ c.libelle}}</td>
+        <td><a href="{{ path('critere_update', { 'id': c.id }) }}" class="btn btn-success form-group" >Update</a></td>
+        <td><a href="{{ path('critere_delete', { 'id': c.id }) }}" class="btn btn-danger form-group" onclick="return confirm('Voulez-vous supprimer?');">Delete</a></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

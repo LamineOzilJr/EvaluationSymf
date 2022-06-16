@@ -1,0 +1,9 @@
+{% extends 'home.html.twig' %}
+{% block title %}
+    Liste des indicateurs
+{% endblock %}
+{% block body %}
+    <form action="{{ path('indicateur_save') }}" method="post">
+        {{ form(form) }}
+    </form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'home.html.twig' %}
+{% block title %}
+    Liste des critères
+{% endblock %}
+{% block body %}
+    <form action="{{ path('critere_update') }}" method="post">
+        {{ form(form) }}
+    </form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'home.html.twig' %}
+{% block title %}
+    Liste des Evaluations
+{% endblock %}
+{% block body %}
+    <table class="table table-bordered table-responsive-md">
+        <tr>
+            <th>Identifiant</th>
+            <th>Libelle</th>
+            <th>Critere</th>
+            <th>Indicateur</th>
+            <th>Action</th>
+            <th>Action</th>
+        </tr>
+        {% for e in evaluations %}
+            <tr>
+                <td>{{ e.id }}</td>
+                <td>{{ e.libelle}}</td>
+                <td>{{ e.Critere}}</td>
+                <td>{{ e.Indicateur}}</td>
+                <td><a href="{{ path('evaluation_update', { 'id': e.id }) }}" class="btn btn-success form-group" >Update</a></td>
+                <td><a href="{{ path('evaluation_delete', { 'id': e.id }) }}" class="btn btn-danger form-group" onclick="return confirm('Voulez-vous supprimer?');">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

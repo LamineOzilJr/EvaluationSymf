@@ -1,0 +1,9 @@
+{% extends 'home.html.twig' %}
+{% block title %}
+    Ajout des Evaluations
+{% endblock %}
+{% block body %}
+    <form action="{{ path('evaluation_save') }}" method="post">
+    {{ form(form) }}
+</form>
+{% endblock %}
